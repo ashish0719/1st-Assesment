@@ -15,26 +15,29 @@ const NFTs=[]
 // this function will take in some values as parameters, create an
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
-function mintNFT (name,id,bloodgroup,qualification) {
-const nft={
-    "name":name,
-    "id":id,
-    "bloodgroup":bloodgroup,
-    "qualification":qualification
+function mintNFT(name, DL_number, bloodgroup, vehicleType) {
+    const drivinglicence = {
+        "name": name,
+        "DL_number": DL_number,
+        "bloodgroup": bloodgroup,
+        "vehicleType": vehicleType
+    };
+
+    NFTs.push(drivinglicence );
 }
-NFTs.push(nft);
-}
+
+
+
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
-function listNFTs () {
-    for (let i = 0; i < NFTs.length; i++) { // Adjust the loop condition
+function listNFTs() {
+    for (let i = 0; i < NFTs.length; i++) {
         console.log("Name: " + NFTs[i].name);
-        console.log("ID: " + NFTs[i].id);
+        console.log("DL Number: " + NFTs[i].DL_number);
         console.log("Blood Group: " + NFTs[i].bloodgroup);
-        console.log("Qualification: " + NFTs[i].qualification);
-        console.log("\n",".......................................................")
-        
+        console.log("Vehicle Type: " + NFTs[i].vehicleType);
+        console.log("\n.......................................................\n");
     }
 }
 
@@ -46,9 +49,9 @@ function getTotalSupply() {
 }
 
 // call your functions below this line
-mintNFT("Ashish","22bcs16682","B+","BE-CSE")
-mintNFT("Shashank","22BCS16680","O","MBA")
-mintNFT("Ankit Singh","22BCS16684","A","NDA")
+mintNFT("Raman das ", "DL123456", "A+", "Car");
+mintNFT("Rajesh ", "DL654321", "O-", "Motorcycle");
+mintNFT("samir", "DL789012", "B+", "Truck");
 
 listNFTs()
 getTotalSupply()
